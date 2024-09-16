@@ -1,4 +1,4 @@
-use crate::components::sidebar::Sidebar;
+use crate::components::layout::Sidebar;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
@@ -11,11 +11,14 @@ pub fn App() -> impl IntoView {
     view! {
         <Html lang="en" dir="ltr" />
         <Title text="Ping" />
-        <Meta charset="utf-8"/>
-        <Meta name="description" content="Real time chat app"/>
+        <Meta charset="utf-8" />
+        <Meta name="description" content="Real time chat app" />
         <Link rel="preconnect" href="https://fonts.googleapis.com" />
         <Link rel="preconnect" href="https://fonts.gstatic.com" />
-        <Link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet" />
+        <Link
+            href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+            rel="stylesheet"
+        />
         <Stylesheet id="leptos" href="/pkg/ping.css" />
         <Body class="bg-primary-900" />
         <Sidebar />
