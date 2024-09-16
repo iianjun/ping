@@ -59,8 +59,6 @@ pub fn main() {
     // prefer using `cargo leptos serve` instead
     // to run: `trunk serve --open --features csr`
     use ping::app::*;
-
     console_error_panic_hook::set_once();
-
     leptos::mount_to_body(App);
 }
