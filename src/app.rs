@@ -21,8 +21,8 @@ pub fn App() -> impl IntoView {
         />
         <Stylesheet id="leptos" href="/pkg/ping.css" />
         <Body class="bg-primary-900" />
-        <Sidebar />
         <Router>
+            <Sidebar />
             <main>
                 <Routes>
                     <Route path="" view=HomePage />

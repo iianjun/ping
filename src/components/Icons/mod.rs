@@ -1,3 +1,3 @@
 mod icons;
 
-pub use icons::{ChatIcon, GroupIcon, SearchIcon, SidebarIcon};
+pub use icons::{ChatIcon, GroupIcon, LogoutIcon, SearchIcon, SidebarIcon};

@@ -31,3 +31,11 @@ pub fn SearchIcon(#[prop(optional)] class: &'static str) -> impl IntoView {
 
     view! { <span class=class inner_html=src /> }
 }
+
+#[component]
+pub fn LogoutIcon(#[prop(optional)] class: &'static str) -> impl IntoView {
+    // Using `CARGO_MANIFEST_DIR` to define the absolute path
+    let src = include_str!("../../../assets/svgs/logout.svg");
+
+    view! { <span class=class inner_html=src /> }
+}
