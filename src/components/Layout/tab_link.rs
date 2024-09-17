@@ -1,8 +1,13 @@
-use crate::classnames;
+use crate::utils::classnames;
 use leptos::*;
 use leptos_router::use_location;
 #[component]
-pub fn TabLink<F, IV>(href: &'static str, text: &'static str, icon: F) -> impl IntoView
+pub fn TabLink<F, IV>(
+    href: &'static str,
+    text: &'static str,
+    icon: F,
+    expand: ReadSignal<bool>,
+) -> impl IntoView
 where
     F: Fn() -> IV,
     IV: IntoView,
@@ -16,7 +21,7 @@ where
                 classnames(
                     &[
                         (
-                            "py-3 px-4 font-semibold flex gap-5 items-center rounded-lg hover:bg-primary-700 transition-colors hover:text-white",
+                            "py-3 font-semibold flex gap-5 items-center rounded-lg hover:bg-primary-700 transition-colors hover:text-white",
                             true,
                         ),
                         (
@@ -24,13 +29,15 @@ where
                             is_active(),
                         ),
                         ("text-primary-400", !is_active()),
+                        ("px-0 justify-center", !expand()),
+                        ("px-4", expand()),
                     ],
                 )
             }
             href=href
         >
             {icon()}
-            {text}
+            {move || if expand() { text } else { "" }}
         </a>
     }
 }

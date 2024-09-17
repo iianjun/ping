@@ -1,4 +1,4 @@
-use crate::classnames;
+use crate::utils::classnames;
 use leptos::*;
 #[component]
 pub fn Ping(#[prop(optional)] class: Option<&'static str>) -> impl IntoView {

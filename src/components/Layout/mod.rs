@@ -1,6 +1,6 @@
 pub mod sidebar;
-pub use sidebar::Sidebar;
+pub use sidebar::*;
 pub mod tab_link;
-pub use tab_link::TabLink;
+pub use tab_link::*;
 pub mod profile;
-pub use profile::ProfileFooter;
+pub use profile::*;
