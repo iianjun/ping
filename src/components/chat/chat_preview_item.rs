@@ -4,9 +4,9 @@ use leptos_router::*;
 pub fn ChatPreviewItem(
     #[prop(default = "lg")] size: &'static str,
     id: u32,
-    profile: &'static str,
-    name: &'static str,
-    last_message: &'static str,
+    profile: String,
+    name: String,
+    last_message: String,
 ) -> impl IntoView {
     if size == "lg" {
         view! {

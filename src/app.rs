@@ -13,7 +13,7 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Html lang="en" dir="ltr" />
-        <Title text="Ping" />
+        <Title formatter=|text| format!("{text} | Ping") />
         <Meta charset="utf-8" />
         <Meta name="description" content="Real time chat app" />
         <Link rel="preconnect" href="https://fonts.googleapis.com" />
