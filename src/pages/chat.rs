@@ -91,7 +91,7 @@ pub fn ChatPage() -> impl IntoView {
             <div class="py-3 px-6 border-b border-primary-700">
                 <h1 class="text-2xl font-semibold leading-10">My Chats</h1>
             </div>
-            <div class="py-4 px-6 flex flex-col overflow-auto flex-1">
+            <div class="py-4 px-3 flex flex-col overflow-auto flex-1">
                 <Suspense fallback=move || {
                     view! { <p>Loading...</p> }
                 }>
