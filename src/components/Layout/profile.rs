@@ -4,7 +4,9 @@ use crate::utils::classnames;
 use leptos::*;
 #[component]
 
-pub fn ProfileFooter(expand: ReadSignal<bool>) -> impl IntoView {
+pub fn ProfileFooter() -> impl IntoView {
+    let expand = expect_context::<RwSignal<bool>>().read_only();
+
     view! {
         <div class=move || classnames(
             &[

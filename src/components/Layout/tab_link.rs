@@ -2,16 +2,12 @@ use crate::utils::classnames;
 use leptos::*;
 use leptos_router::use_location;
 #[component]
-pub fn TabLink<F, IV>(
-    href: &'static str,
-    text: &'static str,
-    icon: F,
-    expand: ReadSignal<bool>,
-) -> impl IntoView
+pub fn TabLink<F, IV>(href: &'static str, text: &'static str, icon: F) -> impl IntoView
 where
     F: Fn() -> IV,
     IV: IntoView,
 {
+    let expand = expect_context::<RwSignal<bool>>().read_only();
     let location = use_location();
     let pathname = move || location.pathname.get();
     let is_active = move || pathname().starts_with(href);

@@ -1,7 +1,5 @@
-use crate::components::layout::Sidebar;
-use crate::pages::chat::ChatPage;
-use crate::pages::chat_detail::ChatDetailPage;
-use crate::pages::home::HomePage;
+use crate::components::layout::Layout;
+use crate::components::provider::ExpandProvider;
 use leptos::*;
 use leptos_meta::*;
 use leptos_router::*;
@@ -25,14 +23,9 @@ pub fn App() -> impl IntoView {
         <Stylesheet id="leptos" href="/pkg/ping.css" />
         <Body class="bg-primary-900" />
         <Router>
-            <Sidebar />
-            <main class="ml-[20rem] h-svh overflow-auto py-6 pr-6">
-                <Routes>
-                    <Route path="" view=HomePage />
-                    <Route path="/chat" view=ChatPage />
-                    <Route path="/chat/:id" view=ChatDetailPage />
-                </Routes>
-            </main>
+            <ExpandProvider>
+                <Layout />
+            </ExpandProvider>
         </Router>
     }
 }

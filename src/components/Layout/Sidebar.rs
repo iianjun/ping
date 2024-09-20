@@ -5,10 +5,8 @@ use crate::utils::classnames;
 use leptos::*;
 #[component]
 pub fn Sidebar() -> impl IntoView {
-    let (expand, set_expand) = create_signal(true);
-    let toggle = move |_| {
-        set_expand(!expand());
-    };
+    let (expand, set_expand) = expect_context::<RwSignal<bool>>().split();
+    let toggle = move |_| set_expand(!expand());
     view! {
         <nav class=move || {
             classnames(
@@ -51,22 +49,19 @@ pub fn Sidebar() -> impl IntoView {
                     href="/chat"
                     text="Chat"
                     icon=|| view! { <ChatIcon class="text-secondary-blue" /> }
-                    expand=expand
                 />
                 <TabLink
                     href="/search"
                     text="Search"
                     icon=|| view! { <SearchIcon class="text-secondary-purple" /> }
-                    expand=expand
                 />
                 <TabLink
                     href="/group"
                     text="Group"
                     icon=|| view! { <GroupIcon class="text-secondary-green" /> }
-                    expand=expand
                 />
             </div>
-            <ProfileFooter expand=expand />
+            <ProfileFooter />
         </nav>
     }
 }
