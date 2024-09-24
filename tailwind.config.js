@@ -21,6 +21,14 @@ module.exports = {
         "secondary-purple": "#8A2BE2",
         "secondary-green": "#3FDD78",
       },
+      backgroundImage: {
+        "selected-gradient":
+          "linear-gradient(to left, #323337, rgba(70, 79, 111, 0.3))",
+      },
+      boxShadow: {
+        selected:
+          "inset 0px 0.0625rem 0 rgba(255,255,255,0.05), 0 0.25rem 0.5rem 0 rgba(0,0,0,0.1)",
+      },
     },
   },
   plugins: [],

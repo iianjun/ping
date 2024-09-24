@@ -1,4 +1,4 @@
-use crate::models::User;
+use crate::{models::User, utils::classnames};
 use leptos::*;
 use leptos_router::*;
 #[component]
@@ -9,6 +9,9 @@ pub fn ChatPreviewItem(
     last_message: String,
     last_message_at: Option<String>,
 ) -> impl IntoView {
+    let params = use_params_map();
+    let current_chat_id =
+        move || params.with(|params| params.get("id").cloned().unwrap_or_default());
     if size == "lg" {
         view! {
           <A
@@ -31,7 +34,20 @@ pub fn ChatPreviewItem(
         view! {
           <a
             href=format!("/chat/{}", id)
-            class="flex gap-3 items-start px-2 transition-colors cursor-pointer py-[.625rem] rounded-[.625rem] w-[16.875rem] hover:bg-primary-700"
+            class=move || {
+              classnames(
+                &[
+                  (
+                    "flex gap-3 items-start px-2 transition-colors cursor-pointer py-[.625rem] rounded-[.625rem] w-[16.875rem] hover:bg-primary-700",
+                    true,
+                  ),
+                  (
+                    "bg-selected-gradient shadow-selected",
+                    current_chat_id().to_string() == id.to_string(),
+                  ),
+                ],
+              )
+            }
           >
             <img
               src=user.profile

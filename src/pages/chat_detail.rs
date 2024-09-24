@@ -1,5 +1,5 @@
-use crate::components::chat::ChatPreviewItem;
-use crate::components::divider::Divider;
+use crate::components::chat::{ChatHeader, ChatPreviewItem, Messages};
+use crate::components::divider::{Direction, Divider};
 use crate::pages::chat::get_previews;
 use leptos::*;
 #[component]
@@ -44,7 +44,11 @@ pub fn ChatDetailPage() -> impl IntoView {
             </Suspense>
           </div>
           <Divider />
-          <div class="flex-1 px-3">Content</div>
+          <div class="flex flex-col flex-1 gap-2 px-3">
+            <ChatHeader />
+            <Divider dir=Direction::Horizontal />
+            <Messages />
+          </div>
         </div>
       </section>
     }

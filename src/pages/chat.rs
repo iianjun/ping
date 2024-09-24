@@ -15,6 +15,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 1,
         },
         ChatPreview {
             id: 2,
@@ -25,6 +26,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile-2.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 2,
         },
         ChatPreview {
             id: 3,
@@ -35,6 +37,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile-3.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 3,
         },
         ChatPreview {
             id: 4,
@@ -45,6 +48,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile-4.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 4,
         },
         ChatPreview {
             id: 5,
@@ -55,6 +59,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile-5.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 5,
         },
         ChatPreview {
             id: 6,
@@ -65,6 +70,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile-6.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 6,
         },
         ChatPreview {
             id: 7,
@@ -75,6 +81,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile-7.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 7,
         },
         ChatPreview {
             id: 8,
@@ -85,6 +92,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile-8.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 8,
         },
         ChatPreview {
             id: 9,
@@ -95,6 +103,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile-9.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 9,
         },
         ChatPreview {
             id: 10,
@@ -105,6 +114,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile-4.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 10,
         },
         ChatPreview {
             id: 11,
@@ -115,6 +125,7 @@ pub async fn get_previews() -> Result<Vec<ChatPreview>, ServerFnError> {
                 profile: "/assets/images/profile.png".to_string(),
             },
             last_message_at: Some("2m".to_string()),
+            chat_room_id: 11,
         },
     ];
     Ok(chat_previews)
@@ -148,7 +159,7 @@ pub fn ChatPage() -> impl IntoView {
                           children=|(_, preview)| {
                             view! {
                               <ChatPreviewItem
-                                id=preview.id
+                                id=preview.chat_room_id
                                 user=preview.user
                                 last_message=preview.last_message
                                 last_message_at=preview.last_message_at

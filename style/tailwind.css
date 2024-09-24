@@ -17,20 +17,24 @@
   --secondary-purple: #8a2be2;
   --secondary-green: #3fdd78;
 }
+
 body {
   color: white;
 }
+
 
 @keyframes ripple {
   0% {
     transform: scale(0.5);
     opacity: 1;
   }
+
   100% {
     transform: scale(1.5);
     opacity: 0;
   }
 }
+
 @layer components {
   .ping-logo {
     position: relative;
@@ -43,6 +47,7 @@ body {
     border-radius: 100%;
     background: var(--secondary-red);
   }
+
   .ping-logo::after {
     content: "";
     position: absolute;
