@@ -29,6 +29,15 @@ module.exports = {
         selected:
           "inset 0px 0.0625rem 0 rgba(255,255,255,0.05), 0 0.25rem 0.5rem 0 rgba(0,0,0,0.1)",
       },
+      transitionTimingFunction: {
+        smooth: "cubic-bezier(0.4, 0, 0.6, 1)",
+      },
+      transitionProperty: {
+        transform: "transform",
+      },
+      transitionDuration: {
+        600: "600ms",
+      },
     },
   },
   plugins: [],
